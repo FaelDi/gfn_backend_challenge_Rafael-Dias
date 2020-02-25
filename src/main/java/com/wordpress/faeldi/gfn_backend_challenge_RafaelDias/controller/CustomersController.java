@@ -60,7 +60,7 @@ public class CustomersController {
 
     @DeleteMapping(path ={"/deleteCustomer/{name}"})
     public ResponseEntity<?> delete(@PathVariable String name) {
-        System.out.println("Cliente removido da base de dados: "+name);
+        System.out.println("Cliente removido da base de dados: " + name);
         return repository.findById(name)
                 .map(record -> {
                     repository.deleteById(name);
